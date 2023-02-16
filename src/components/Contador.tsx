@@ -1,0 +1,23 @@
+import { useState } from "react";
+
+export const Contador = () => {
+
+    const [valor, setValor] = useState<number>(1);
+
+    const acumular = (num: number):void => {
+        setValor(valor + num);
+    };
+        
+    return (
+        <>
+            <h3>Contador <small>{ valor }</small> </h3>
+            <button className='btn btn-primary' onClick={() => acumular(1)}>
+                +1
+            </button>
+            &nbsp;
+            <button className='btn btn-primary' onClick={() => acumular(-1)}>
+                -1
+            </button>
+        </>
+    );
+};
